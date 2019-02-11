@@ -23,7 +23,7 @@ var con = mysql.createConnection({
   });
 
   app.get("",function(res,req){
-      connect.query("SELECT * FROM cars", function(error, rows, fields){
+      con.query("SELECT * FROM cars", function(error, rows, fields){
           if(error){
               console.log('Error in the query');
           }
