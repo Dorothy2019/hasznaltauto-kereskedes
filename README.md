@@ -9,3 +9,6 @@ Kliens oldal Angular, server oldal Node.js.
  
  02.11:
  * az egyik változót elírtam, javítottam a hibát, így sikerült adatbázisból is lekérdeznem adatokat.
+ 
+ 02.20:
+ * Angular projekt elkészítettem, de még nem siekrült az adatbázissal összefésülnöm.
