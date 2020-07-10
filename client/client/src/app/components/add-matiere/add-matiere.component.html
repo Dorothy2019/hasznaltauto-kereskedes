@@ -1,0 +1,39 @@
+<div class="form-horizontal pad-10">
+    <br>
+    <form #addMatiereForm="ngForm">
+      <div class="col-md-6 form-group">
+        <label class=" control-label">Auto Type</label>
+        <div class="col-md-12 no-padding">
+          <input name="Type" id="Type" #Type="ngModel" [(ngModel)]="matieres.type" class="form-control" placeholder="Adjon meg típust." type="text" required />
+          <div *ngIf="Type.errors && (Type.dirty || Type.touched)" class="alert alert-danger">
+            <div [hidden]="!Type.errors.required">
+              Márkát meg kell adni!
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 form-group">
+        <label class=" control-label">Auto License plate</label>
+        <div class="col-md-12 no-padding">
+          <input name="License" id="License" #License="ngModel" [(ngModel)]="matieres.licensePlate" class="form-control" placeholder="Adjon meg rendszámot." type="text" required />
+          <div *ngIf="License.errors && (License.dirty || License.touched)" class="alert alert-danger">
+            <div [hidden]="!License.errors.required">
+            Rendszámot meg kell adni!
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pad-10">
+        <button mwlConfirmationPopover
+                [popoverTitle]="'Confirmation'"
+                [popoverMessage]="'Biztosan megerositi?'"
+                placement="top"
+                (confirm)="createMatiere(matieres)"
+                type="submit" class="btn btn-save btn-primary" [disabled]="!addMatiereForm.valid">
+          <span class="glyphicon glyphicon-floppy-disk"></span> Mentés
+        </button>
+      </div>
+    </form>
+  </div>
+  
+  

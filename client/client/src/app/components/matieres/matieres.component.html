@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-md-12 pad-10">
+      <button type="submit" class="btn btn-primary" (click)="goToAddMatiere()">
+        <span class="glyphicon glyphicon-floppy-disk"></span> Auto hozzáadása
+      </button>
+    </div>
+  </div>
+  
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <!-->th>ID</th-->
+      <th>Car Type</th>
+      <th>License plate</th>
+      <th>Car image</th>
+      <th></th>
+      <th></th>
+    </tr>
+  
+    </thead>
+    <tbody>
+    <tr *ngFor="let matiere of matieres">
+      <!-->td>{{ matiere.ID }}</td-->
+      <td>{{ matiere.type }}</td>
+      <td>{{ matiere.licensePlate }}</td>
+      <td><img src='/assets/images/{{ matiere.carImg }}.jpg' width="130px" height="100px"></td>
+
+      <!--td (click)="deleteMatiere(matiere.Type)"><a>Delete</a></td-->
+       <!--td [routerLink]="['/update-matiere', matiere.ID]"><a>Update</a></td-->
+       <!--td><button type="submit" class="btn btn-primary" (click)="goToDeleteMatiere()">
+        <span class="glyphicon glyphicon-floppy-disk"></span> Delete
+      </button></td-->
+      <td>
+         <button type="submit" class="btn btn-primary" (click)="goToUpdateMatiere(matiere)">
+          <span class="glyphicon glyphicon-floppy-disk"></span> Update
+          </button>
+      </td> 
+      <td>
+        <button type="submit" class="btn btn-primary" (click)="goToAddRepair(matiere)">
+         <span class="glyphicon glyphicon-floppy-disk"></span> Add Repair
+         </button>
+     </td> 
+      <td>
+          <button type="submit" class="btn btn-primary" (click)="deleteMatiere(matiere.id)">
+          <span class="glyphicon glyphicon-floppy-disk"></span> Delete
+          </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
